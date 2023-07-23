@@ -1,19 +1,15 @@
-
 <!DOCTYPE html>
 
 <html lang="python">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>functions module &#8212; TACS  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -103,6 +99,18 @@ of the load vector with the displacement.</p>
 <dd><p>Set the type of compliance value to use</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="tacs.functions.EnclosedVolume">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tacs.functions.</span></span><span class="sig-name descname"><span class="pre">EnclosedVolume</span></span><a class="headerlink" href="#tacs.functions.EnclosedVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Function</span></code></p>
+<p>Evaluates the volume enclosed by the elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>assembler</strong> (<a class="reference internal" href="TACS.html#TACS.Assembler" title="TACS.Assembler"><em>Assembler</em></a>) -- TACS Assembler object that will evaluating this function.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
@@ -256,6 +264,7 @@ about origin (False) or center of mass (True) (keyword argument). Defaults to Fa
 <li><a class="reference internal" href="#tacs.functions.Compliance.setComplianceType"><code class="docutils literal notranslate"><span class="pre">Compliance.setComplianceType()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#tacs.functions.EnclosedVolume"><code class="docutils literal notranslate"><span class="pre">EnclosedVolume</span></code></a></li>
 <li><a class="reference internal" href="#tacs.functions.KSDisplacement"><code class="docutils literal notranslate"><span class="pre">KSDisplacement</span></code></a></li>
 <li><a class="reference internal" href="#tacs.functions.KSFailure"><code class="docutils literal notranslate"><span class="pre">KSFailure</span></code></a></li>
 <li><a class="reference internal" href="#tacs.functions.KSTemperature"><code class="docutils literal notranslate"><span class="pre">KSTemperature</span></code></a></li>

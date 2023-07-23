@@ -1,19 +1,15 @@
-
 <!DOCTYPE html>
 
 <html lang="python">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Direct &#8212; TACS  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -68,7 +64,7 @@ constitutive properties and design variables.</p></li>
 <li><p>Solve the system and evaluate the functions and their gradients with respect to the
 design variables.</p></li>
 </ol>
-<p>These function values and gradients can then be passed to an optimizer (such as <a class="reference external" href="https://smdogroup.github.io/paropt/reference.html#module-paropt.ParOpt" title="(in paropt)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ParOpt</span></code></a>)
+<p>These function values and gradients can then be passed to an optimizer (such as <a class="reference external" href="https://smdogroup.github.io/paropt/reference.html#module-paropt.ParOpt" title="(in ParOpt)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ParOpt</span></code></a>)
 in order to minimize the value of a particular function subject to some constraints.
 Improved design variable values are iteratively computed by the optimizer and Step 4 is
 repeated until the optimization criteria are satisfied.</p>
@@ -104,7 +100,8 @@ evalAdjointResProduct, but uses more memory than calling it for
 each adjoint vector.</p>
 <p>adjoint: the array of adjoint vectors
 dvSens: the product of the derivative of the residuals and the adjoint
-num_dvs: the number of design variables</p>
+num_dvs: the number of design variables
+loadScale: Scaling factor for the aux element contributions, by default 1</p>
 </dd></dl>
 
 <dl class="py method">
@@ -176,12 +173,13 @@ matrix by zeroing the rows of the matrix associated with a
 boundary condition, and setting the diagonal to unity. The
 matrix assembly also performs any communication required so that
 the matrix can be used immediately after assembly.</p>
-<p>alpha:      coefficient on the variables
-beta:        coefficient on the time-derivative terms
-gamma:      coefficient on the second time derivative term
+<p>alpha:     coefficient on the variables
+beta:      coefficient on the time-derivative terms
+gamma:     coefficient on the second time derivative term
 residual:  the residual of the governing equations
-A:            the Jacobian matrix
-matOr:      the matrix orientation NORMAL or TRANSPOSE</p>
+A:         the Jacobian matrix
+matOr:     the matrix orientation NORMAL or TRANSPOSE
+loadScale: Scaling factor for the aux element contributions, by default 1</p>
 </dd></dl>
 
 <dl class="py method">
@@ -207,7 +205,8 @@ alpha:      coefficient on the variables
 beta:        coefficient on the time-derivative terms
 gamma:      coefficient on the second time derivative
 term
-matOr:      the matrix orientation NORMAL or TRANSPOSE</p>
+matOr:      the matrix orientation NORMAL or TRANSPOSE
+loadScale: Scaling factor for the aux element contributions, by default 1</p>
 </dd></dl>
 
 <dl class="py method">
@@ -219,7 +218,8 @@ set in the TACSSurfaceTraction class and any point loads. Note
 that the vector entries are zeroed first, and that the Dirichlet
 boundary conditions are applied after the assembly of the
 residual is complete.</p>
-<p>rhs:        the residual output</p>
+<p>rhs:        the residual output
+loadScale:  Scaling factor for the aux element contributions, by default 1</p>
 </dd></dl>
 
 <dl class="py method">
@@ -322,7 +322,7 @@ parallel layout.</p>
 <span class="sig-name descname"><span class="pre">getDesignVarRange</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TACS.Assembler.getDesignVarRange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve the design variable range.</p>
 <p>This call is collective on all TACS processes. The ranges
-provided by indivdual objects may not be consistent (if
+provided by individual objects may not be consistent (if
 someone provided incorrect data they could be.) Make a
 best guess; take the minimum upper bound and the maximum
 lower bound.</p>

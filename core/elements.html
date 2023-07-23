@@ -1,19 +1,15 @@
-
 <!DOCTYPE html>
 
 <html lang="python">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>elements module &#8212; TACS  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxdoc.css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -317,6 +313,20 @@ This is appropriate for orthotropic and anisotropic shells, who's stiffness prop
 <dd class="field-odd"><p><strong>axis</strong> (<em>array-like</em>) -- Reference axis.</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.ShellRefAxisTransform.getRefAxis">
+<span class="sig-name descname"><span class="pre">getRefAxis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.ShellRefAxisTransform.getRefAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get reference axis for transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>reference axis</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>axis (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -336,6 +346,20 @@ This class uses a projection of a user-supplied reference axis to define the bea
 <dd class="field-odd"><p><strong>axis</strong> (<em>array-like</em>) -- Reference axis.</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.BeamRefAxisTransform.getRefAxis">
+<span class="sig-name descname"><span class="pre">getRefAxis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.BeamRefAxisTransform.getRefAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get reference axis for transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>reference axis</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>axis (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -366,6 +390,20 @@ The local <cite>y</cite> is given by the cross product of local <cite>z</cite> a
 <dd class="field-odd"><p><strong>axis</strong> (<em>array-like</em>) -- Reference axis.</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.SpringRefAxisTransform.getRefAxis">
+<span class="sig-name descname"><span class="pre">getRefAxis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.SpringRefAxisTransform.getRefAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get reference axis for transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>reference axis</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>axis (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -378,6 +416,21 @@ This class uses an user-defined arbritrary reference frame for the transform (i.
 The reference is defined using two reference vectors. <cite>axis1</cite> defines the local <cite>x</cite> axes.
 The local <cite>z</cite> is given by the cross product of <cite>x</cite> and <cite>axis2</cite>.
 The local <cite>y</cite> is given by the cross product of local <cite>z</cite> and <cite>x</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.SpringRefFrameTransform.getRefAxes">
+<span class="sig-name descname"><span class="pre">getRefAxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.SpringRefFrameTransform.getRefAxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get reference axes for transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>first reference axis
+axis_j (numpy.ndarray): second reference axis</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>axis_i (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)">numpy.ndarray</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -955,11 +1008,26 @@ points.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_nodes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) -- Total number of nodes associated with the element.</p></li>
-<li><p><strong>constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
-dependent node dof's are attached to the eleemnt.</p></li>
+<li><p><strong>constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
+dependent node dof's are attached to the element.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.RBE2.setScalingParameters">
+<span class="sig-name descname"><span class="pre">setScalingParameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.RBE2.setScalingParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set scaling parameters used in Lagrange multiplier formulation of the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>C1</strong> (<em>double</em>) -- Constraint matrix scaling factor used in RBE Lagrange multiplier stiffness matrix.</p></li>
+<li><p><strong>C2</strong> (<em>double</em>) -- Artificial constant added to diagonals of RBE Lagrange multiplier stiffness matrix</p></li>
+<li><p><strong>preconditioner.</strong> (<em>to stabilize</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -981,14 +1049,29 @@ geometry and local weight factors.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>num_nodes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) -- Total number of nodes associated with the element.</p></li>
-<li><p><strong>dep_constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
+<li><p><strong>dep_constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
 dependent node dof's are attached to the eleemnt.</p></li>
-<li><p><strong>weights</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>]</em>) -- RBE weighting factor for each independent node.</p></li>
-<li><p><strong>indep_constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
-independent node dof's are attached to the eleemnt.</p></li>
+<li><p><strong>weights</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>]</em>) -- RBE weighting factor for each independent node.</p></li>
+<li><p><strong>indep_constrained_dofs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25)"><em>numpy.ndarray</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>]</em>) -- Flags to determine which
+independent node dof's are attached to the element.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="tacs.elements.RBE3.setScalingParameters">
+<span class="sig-name descname"><span class="pre">setScalingParameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tacs.elements.RBE3.setScalingParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set scaling parameters used in Lagrange multiplier formulation of the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>C1</strong> (<em>double</em>) -- Constraint matrix scaling factor used in RBE Lagrange multiplier stiffness matrix.</p></li>
+<li><p><strong>C2</strong> (<em>double</em>) -- Artificial constant added to diagonals of RBE Lagrange multiplier stiffness matrix</p></li>
+<li><p><strong>preconditioner.</strong> (<em>to stabilize</em>) -- </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -1072,11 +1155,23 @@ independent node dof's are attached to the eleemnt.</p></li>
 </li>
 <li><a class="reference internal" href="#transform-classes">Transform classes</a><ul>
 <li><a class="reference internal" href="#tacs.elements.ShellNaturalTransform"><code class="docutils literal notranslate"><span class="pre">ShellNaturalTransform</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.ShellRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">ShellRefAxisTransform</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.BeamRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">BeamRefAxisTransform</span></code></a></li>
+<li><a class="reference internal" href="#tacs.elements.ShellRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">ShellRefAxisTransform</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.ShellRefAxisTransform.getRefAxis"><code class="docutils literal notranslate"><span class="pre">ShellRefAxisTransform.getRefAxis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tacs.elements.BeamRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">BeamRefAxisTransform</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.BeamRefAxisTransform.getRefAxis"><code class="docutils literal notranslate"><span class="pre">BeamRefAxisTransform.getRefAxis()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#tacs.elements.SpringIdentityTransform"><code class="docutils literal notranslate"><span class="pre">SpringIdentityTransform</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.SpringRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">SpringRefAxisTransform</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.SpringRefFrameTransform"><code class="docutils literal notranslate"><span class="pre">SpringRefFrameTransform</span></code></a></li>
+<li><a class="reference internal" href="#tacs.elements.SpringRefAxisTransform"><code class="docutils literal notranslate"><span class="pre">SpringRefAxisTransform</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.SpringRefAxisTransform.getRefAxis"><code class="docutils literal notranslate"><span class="pre">SpringRefAxisTransform.getRefAxis()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tacs.elements.SpringRefFrameTransform"><code class="docutils literal notranslate"><span class="pre">SpringRefFrameTransform</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.SpringRefFrameTransform.getRefAxes"><code class="docutils literal notranslate"><span class="pre">SpringRefFrameTransform.getRefAxes()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#element-classes">Element classes</a><ul>
@@ -1102,8 +1197,14 @@ independent node dof's are attached to the eleemnt.</p></li>
 <li><a class="reference internal" href="#tacs.elements.Beam3"><code class="docutils literal notranslate"><span class="pre">Beam3</span></code></a></li>
 <li><a class="reference internal" href="#tacs.elements.Beam2ModRot"><code class="docutils literal notranslate"><span class="pre">Beam2ModRot</span></code></a></li>
 <li><a class="reference internal" href="#tacs.elements.Beam3ModRot"><code class="docutils literal notranslate"><span class="pre">Beam3ModRot</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.RBE2"><code class="docutils literal notranslate"><span class="pre">RBE2</span></code></a></li>
-<li><a class="reference internal" href="#tacs.elements.RBE3"><code class="docutils literal notranslate"><span class="pre">RBE3</span></code></a></li>
+<li><a class="reference internal" href="#tacs.elements.RBE2"><code class="docutils literal notranslate"><span class="pre">RBE2</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.RBE2.setScalingParameters"><code class="docutils literal notranslate"><span class="pre">RBE2.setScalingParameters()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tacs.elements.RBE3"><code class="docutils literal notranslate"><span class="pre">RBE3</span></code></a><ul>
+<li><a class="reference internal" href="#tacs.elements.RBE3.setScalingParameters"><code class="docutils literal notranslate"><span class="pre">RBE3.setScalingParameters()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#tacs.elements.MassElement"><code class="docutils literal notranslate"><span class="pre">MassElement</span></code></a></li>
 <li><a class="reference internal" href="#tacs.elements.SpringElement"><code class="docutils literal notranslate"><span class="pre">SpringElement</span></code></a></li>
 </ul>
